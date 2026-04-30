@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Petals of Paradise | Butwal Nepal</title>
+<title>Petals of Paradise</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
 <style>
 body{
 margin:0;
 font-family:Poppins;
-background:#fffafc;
+background:#fff6f8;
 }
 
-/* TOP OFFER BAR */
+/* TOP BAR */
 .topbar{
 background:#ff4d6d;
 color:white;
@@ -36,8 +36,8 @@ box-shadow:0 2px 10px rgba(0,0,0,0.1);
 
 .logo{
 color:#ff4d6d;
+font-weight:700;
 font-size:22px;
-font-weight:bold;
 }
 
 nav a{
@@ -49,20 +49,37 @@ color:#333;
 /* HERO */
 .hero{
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 padding:60px;
 background:linear-gradient(to right,#ffe5ec,#fff);
 }
 
-.hero-text h1{
-font-size:45px;
+.hero h1{
+font-family:'Playfair Display';
+font-size:50px;
 color:#ff4d6d;
+margin:0;
+}
+
+.hero p{
+color:#555;
 }
 
 .hero img{
-width:400px;
+width:420px;
 border-radius:20px;
+}
+
+/* BUTTON */
+.btn{
+background:#ff4d6d;
+color:white;
+padding:10px 18px;
+border-radius:6px;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
 }
 
 /* SECTION */
@@ -75,7 +92,7 @@ h2{
 color:#ff4d6d;
 }
 
-/* PRODUCTS */
+/* GRID */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -84,8 +101,8 @@ gap:20px;
 
 .card{
 background:white;
-padding:10px;
 border-radius:15px;
+padding:10px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
@@ -101,16 +118,6 @@ color:#ff4d6d;
 font-weight:bold;
 }
 
-.btn{
-background:#ff4d6d;
-color:white;
-padding:8px;
-display:inline-block;
-margin-top:10px;
-border-radius:5px;
-text-decoration:none;
-}
-
 /* OFFERS */
 .offers{
 display:grid;
@@ -118,8 +125,8 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 }
 
-.offer-box{
-background:#fff;
+.offer{
+background:white;
 padding:20px;
 border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
@@ -129,19 +136,25 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 form{
 max-width:500px;
 margin:auto;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
 input,select,textarea{
 width:100%;
 padding:10px;
 margin:10px 0;
+border:1px solid #ddd;
+border-radius:5px;
 }
 
 /* FOOTER */
 footer{
 background:#ff4d6d;
 color:white;
-padding:20px;
+padding:30px;
 text-align:center;
 }
 
@@ -154,8 +167,8 @@ background:#25D366;
 color:white;
 padding:15px;
 border-radius:50%;
+font-size:22px;
 text-decoration:none;
-font-size:20px;
 }
 </style>
 </head>
@@ -163,39 +176,43 @@ font-size:20px;
 <body>
 
 <div class="topbar">
-🎁 Special Offer: 10% OFF Birthday | 15% Anniversary | 20% Wedding
+🎁 Special Offer: 10% OFF Birthday Orders | 15% OFF Anniversary & Wedding Bookings
 </div>
 
 <header>
 <div class="logo">🌸 Petals of Paradise</div>
 <nav>
 <a href="#">Home</a>
+<a href="#">About</a>
 <a href="#">Bouquets</a>
+<a href="#">Services</a>
 <a href="#">Offers</a>
-<a href="#">Order</a>
+<a href="#">Contact</a>
 </nav>
 </header>
 
 <!-- HERO -->
 <div class="hero">
-<div class="hero-text">
+<div>
+<p>फूलले बोल्छ मनका कुरा ❤️</p>
 <h1>Petals of Paradise</h1>
-<p>Handmade with Love, Delivered in Butwal 🇳🇵</p>
-<a class="btn">ORDER NOW</a>
+<p>Handmade with Love, Delivered with Happiness</p>
+<p>📍 Butwal, Nepal</p>
+<a class="btn">ORDER NOW 🛒</a>
 </div>
 
-<img src="https://images.unsplash.com/photo-1603575448363-0f07d9a3c0d3">
+<img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d">
 </div>
 
 <!-- PRODUCTS -->
 <section>
-<h2>Our Beautiful Bouquets 💐</h2>
+<h2>🌸 Our Beautiful Bouquets 🌸</h2>
 
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d">
-<h3>Red Rose Bouquet</h3>
+<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
+<h3>Classic Red Rose</h3>
 <p class="price">Rs.1200</p>
 <a class="btn">Order Now</a>
 </div>
@@ -211,55 +228,53 @@ font-size:20px;
 <img src="https://images.unsplash.com/photo-1470165510883-0a4c3c0f2d9c">
 <h3>Sunflower Bouquet</h3>
 <p class="price">Rs.1400</p>
-<a class="btn">Order Now</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
+<img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df">
 <h3>Mixed Flowers</h3>
 <p class="price">Rs.1300</p>
-<a class="btn">Order Now</a>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec">
-<h3>Crochet Rose Bouquet 🧶</h3>
+<h3>Crochet Bouquet 🧶</h3>
 <p class="price">Rs.1800</p>
-<a class="btn">Order Now</a>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1">
 <h3>Tulip Bouquet</h3>
 <p class="price">Rs.1500</p>
-<a class="btn">Order Now</a>
 </div>
 
 </div>
+
+<a class="btn">VIEW ALL BOUQUETS 🌸</a>
 </section>
 
 <!-- OFFERS -->
 <section>
-<h2>Special Offers 🎉</h2>
+<h2>🎉 Special Offers 🎉</h2>
 
 <div class="offers">
 
-<div class="offer-box">
-<h3>🎂 Birthday</h3>
+<div class="offer">
+<h3>🎂 Birthday Offer</h3>
 <p>10% OFF</p>
 </div>
 
-<div class="offer-box">
+<div class="offer">
 <h3>💍 Anniversary</h3>
 <p>15% OFF</p>
 </div>
 
-<div class="offer-box">
+<div class="offer">
 <h3>💒 Wedding</h3>
 <p>20% OFF</p>
 </div>
 
-<div class="offer-box">
+<div class="offer">
 <h3>🎁 Combo</h3>
 <p>Bouquet + Chocolate Rs.1800</p>
 </div>
@@ -269,17 +284,17 @@ font-size:20px;
 
 <!-- ORDER -->
 <section>
-<h2>Order Online 🛒</h2>
+<h2>🛒 Order Online</h2>
 
 <form>
-<input placeholder="Your Name" required>
-<input placeholder="Phone Number" required>
+<input placeholder="Your Name">
+<input placeholder="Phone Number">
 
 <select>
 <option>Select Bouquet</option>
 <option>Rose</option>
+<option>Sunflower</option>
 <option>Crochet</option>
-<option>Wedding</option>
 </select>
 
 <input type="date">
@@ -290,7 +305,7 @@ font-size:20px;
 </section>
 
 <footer>
-<p>© 2026 Petals of Paradise | Butwal Nepal 🇳🇵</p>
+<p>© 2026 Petals of Paradise | Made with ❤️ in Nepal 🇳🇵</p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/97798XXXXXXXX">💬</a>
