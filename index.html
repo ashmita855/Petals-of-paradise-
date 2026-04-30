@@ -4,102 +4,146 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
-<title>Petals of Paradise | Flower Shop in Butwal Nepal | Bouquets & Event Decoration</title>
-<meta name="description" content="Petals of Paradise - Premium flower shop in Butwal, Nepal. Handmade bouquets, fresh flowers, wedding decoration, birthday setup & event decoration services.">
-<meta name="keywords" content="flower shop Butwal, bouquets Nepal, handmade bouquet, event decoration Nepal, wedding flowers Butwal">
-<meta name="author" content="Petals of Paradise">
+<title>Petals of Paradise | Butwal Nepal Flower Shop</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<meta name="description" content="Petals of Paradise - Handmade bouquets, crochet flowers, and event decoration in Butwal, Nepal. Order online now!">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: #fff;
+    scroll-behavior: smooth;
 }
 
 /* NAVBAR */
 header {
-    background: #ff6f91;
+    background: linear-gradient(45deg,#ff4d6d,#ff8fa3);
     padding: 15px;
     text-align: center;
     color: white;
 }
+
 nav a {
-    color: white;
     margin: 10px;
+    color: white;
     text-decoration: none;
-    font-weight: 500;
 }
-nav a:hover {
-    text-decoration: underline;
+
+.lang-btn {
+    background: white;
+    color: #ff4d6d;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 /* HERO */
 .hero {
-    background: url('https://images.unsplash.com/photo-1525310072745-f49212b5ac6d') no-repeat center/cover;
+    background: url('https://images.unsplash.com/photo-1525310072745-f49212b5ac6d') center/cover;
     height: 90vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+    animation: fadeIn 2s;
 }
+
 .hero h1 {
     font-size: 50px;
 }
-.hero p {
-    font-size: 18px;
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
 }
 
 /* SECTION */
 section {
     padding: 50px;
-    text-align: center;
+    text-align:center;
 }
+
 h2 {
-    color: #ff6f91;
+    color:#ff4d6d;
 }
 
-/* SERVICES */
-.services {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* CARDS */
+.container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
 }
+
 .card {
-    width: 300px;
-    margin: 15px;
-    padding: 20px;
-    background: #ffe4ec;
-    border-radius: 15px;
+    width:280px;
+    margin:15px;
+    background:#fff0f5;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
+
+.card:hover {
+    transform:scale(1.05);
+}
+
 .card img {
-    width: 100%;
-    border-radius: 10px;
+    width:100%;
+    height:200px;
+    object-fit:cover;
 }
 
-/* GALLERY */
-.gallery img {
-    width: 250px;
-    margin: 10px;
-    border-radius: 10px;
+.card h3 {
+    margin:10px;
 }
 
-/* CONTACT */
-.contact {
-    background: #ff6f91;
-    color: white;
+.price {
+    color:#ff4d6d;
+    font-weight:bold;
+}
+
+/* OFFER */
+.offer {
+    background:#ffe5ec;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* ORDER FORM */
+form {
+    max-width:400px;
+    margin:auto;
+}
+
+input, select {
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    font-size:20px;
+    text-decoration:none;
 }
 
 /* FOOTER */
 footer {
-    background: #333;
-    color: white;
-    padding: 10px;
-    text-align: center;
+    background:#333;
+    color:white;
+    padding:10px;
 }
 </style>
 </head>
@@ -107,96 +151,138 @@ footer {
 <body>
 
 <header>
-    <h1>🌸 Petals of Paradise</h1>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<h1 id="title">🌸 Petals of Paradise</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Bouquets</a>
+<a href="#offers">Offers</a>
+<a href="#order">Order</a>
+<button class="lang-btn" onclick="toggleLang()">🇳🇵</button>
+</nav>
 </header>
 
 <!-- HERO -->
 <div class="hero" id="home">
-    <div>
-        <h1>Flowers that Speak Your Heart 💐</h1>
-        <p>Handmade Bouquets | Event Decoration | Butwal, Nepal</p>
-    </div>
+<div>
+<h1 id="tagline">“Blossoming Love from the Heart of Nepal”</h1>
+<p id="sub">Handmade Bouquets | Crochet Flowers | Butwal</p>
+</div>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
-    <h2>About Us</h2>
-    <p>
-        Welcome to <b>Petals of Paradise</b>, your trusted flower shop in Butwal, Nepal.
-        We specialize in handcrafted bouquets and creative floral designs made with love.
-        Flowers are a symbol of emotions and are perfect for every occasion like birthdays,
-        weddings, and celebrations.
-    </p>
+<!-- PRODUCTS -->
+<section id="products">
+<h2>Our Bouquets 💐</h2>
 
-    <p>
-        Our expert florists carefully design each bouquet using fresh flowers and artistic arrangements,
-        ensuring beauty, elegance, and long-lasting freshness.
-    </p>
+<div class="container">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
+<h3>Rose Love Bouquet</h3>
+<p class="price">Rs. 1200</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+<h3>Mixed Flower Bouquet</h3>
+<p class="price">Rs. 1500</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df">
+<h3>Sunflower Happiness</h3>
+<p class="price">Rs. 1300</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
+<h3>Handmade Paper Bouquet</h3>
+<p class="price">Rs. 1000</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+<h3>Wedding Floral Set</h3>
+<p class="price">Rs. 5000+</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1505236731924-18e3d2e7b94c">
+<h3>Birthday Special Bouquet</h3>
+<p class="price">Rs. 1100</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec">
+<h3>Crochet Handmade Bouquet 🧶</h3>
+<p class="price">Rs. 1800</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1">
+<h3>Eternal Artificial Bouquet</h3>
+<p class="price">Rs. 1400</p>
+</div>
+
+</div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
-    <h2>Our Services</h2>
+<!-- OFFERS -->
+<section id="offers">
+<h2>Special Offers 🎉</h2>
 
-    <div class="services">
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
-            <h3>🌹 Fresh Bouquets</h3>
-            <p>Premium fresh flower bouquets starting from Rs. 1000</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-            <h3>🎀 Handmade Bouquets</h3>
-            <p>Customized handmade bouquets crafted with love and creativity</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-            <h3>💒 Wedding Decoration</h3>
-            <p>Beautiful floral decoration for weddings and engagements</p>
-        </div>
-
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1505236731924-18e3d2e7b94c">
-            <h3>🎉 Event Decoration</h3>
-            <p>Birthday, anniversary & party decoration services in Butwal</p>
-        </div>
-
-    </div>
+<div class="offer">
+<p>🎂 Birthday Offer: 10% Discount on your special day</p>
+<p>💍 Anniversary Offer: Flat Rs. 200 OFF</p>
+<p>💒 Wedding Package: Free decoration consultation</p>
+<p>🎁 Surprise Combo: Bouquet + Chocolate at Rs. 1800</p>
+</div>
 </section>
 
-<!-- GALLERY -->
-<section id="gallery">
-    <h2>Our Collection</h2>
+<!-- ORDER -->
+<section id="order">
+<h2>Order Online 🛒</h2>
 
-    <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df">
-        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
-        <img src="https://images.unsplash.com/photo-1496065187959-7f07b8353c55">
-        <img src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa">
-    </div>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="text" placeholder="Phone Number" required>
+
+<select>
+<option>Select Bouquet</option>
+<option>Rose Bouquet</option>
+<option>Crochet Bouquet</option>
+<option>Wedding Package</option>
+</select>
+
+<input type="date">
+
+<input type="submit" value="Place Order">
+</form>
 </section>
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>📍 Location: Butwal, Nepal</p>
-    <p>📞 Phone: +977-98XXXXXXXX</p>
-    <p>📧 Email: petalsofparadise@gmail.com</p>
-</section>
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/97798XXXXXXXX" target="_blank">💬</a>
 
 <footer>
-    <p>© 2026 Petals of Paradise | Designed with ❤️ in Nepal</p>
+<p>© 2026 Petals of Paradise | Made with ❤️ in Nepal 🇳🇵</p>
 </footer>
+
+<script>
+function toggleLang() {
+    let title = document.getElementById("title");
+    let tagline = document.getElementById("tagline");
+    let sub = document.getElementById("sub");
+
+    if(title.innerHTML.includes("Petals")) {
+        title.innerHTML = "🌸 स्वर्गीय फूल";
+        tagline.innerHTML = "नेपालको मुटुबाट फुल्ने माया";
+        sub.innerHTML = "हातले बनाइएको बुके | बुटवल";
+    } else {
+        title.innerHTML = "🌸 Petals of Paradise";
+        tagline.innerHTML = "Blossoming Love from the Heart of Nepal";
+        sub.innerHTML = "Handmade Bouquets | Butwal";
+    }
+}
+</script>
 
 </body>
 </html>
