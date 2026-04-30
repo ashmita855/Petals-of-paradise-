@@ -4,285 +4,296 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Petals of Paradise | Butwal Nepal Flower Shop</title>
-
-<meta name="description" content="Petals of Paradise - Handmade bouquets, crochet flowers, and event decoration in Butwal, Nepal. Order online now!">
+<title>Petals of Paradise | Butwal Nepal</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
+body{
+margin:0;
+font-family:Poppins;
+background:#fffafc;
+}
+
+/* TOP OFFER BAR */
+.topbar{
+background:#ff4d6d;
+color:white;
+text-align:center;
+padding:8px;
+font-size:14px;
 }
 
 /* NAVBAR */
-header {
-    background: linear-gradient(45deg,#ff4d6d,#ff8fa3);
-    padding: 15px;
-    text-align: center;
-    color: white;
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-nav a {
-    margin: 10px;
-    color: white;
-    text-decoration: none;
+.logo{
+color:#ff4d6d;
+font-size:22px;
+font-weight:bold;
 }
 
-.lang-btn {
-    background: white;
-    color: #ff4d6d;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
+nav a{
+margin:0 10px;
+text-decoration:none;
+color:#333;
 }
 
 /* HERO */
-.hero {
-    background: url('https://images.unsplash.com/photo-1525310072745-f49212b5ac6d') center/cover;
-    height: 90vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:white;
-    text-align:center;
-    animation: fadeIn 2s;
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:60px;
+background:linear-gradient(to right,#ffe5ec,#fff);
 }
 
-.hero h1 {
-    font-size: 50px;
+.hero-text h1{
+font-size:45px;
+color:#ff4d6d;
 }
 
-@keyframes fadeIn {
-    from {opacity:0;}
-    to {opacity:1;}
+.hero img{
+width:400px;
+border-radius:20px;
 }
 
 /* SECTION */
-section {
-    padding: 50px;
-    text-align:center;
+section{
+padding:50px;
+text-align:center;
 }
 
-h2 {
-    color:#ff4d6d;
+h2{
+color:#ff4d6d;
 }
 
-/* CARDS */
-.container {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+/* PRODUCTS */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
 }
 
-.card {
-    width:280px;
-    margin:15px;
-    background:#fff0f5;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.3s;
+.card{
+background:white;
+padding:10px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.card:hover {
-    transform:scale(1.05);
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
 }
 
-.card img {
-    width:100%;
-    height:200px;
-    object-fit:cover;
+.price{
+color:#ff4d6d;
+font-weight:bold;
 }
 
-.card h3 {
-    margin:10px;
+.btn{
+background:#ff4d6d;
+color:white;
+padding:8px;
+display:inline-block;
+margin-top:10px;
+border-radius:5px;
+text-decoration:none;
 }
 
-.price {
-    color:#ff4d6d;
-    font-weight:bold;
+/* OFFERS */
+.offers{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
 }
 
-/* OFFER */
-.offer {
-    background:#ffe5ec;
-    padding:20px;
-    border-radius:10px;
+.offer-box{
+background:#fff;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* ORDER FORM */
-form {
-    max-width:400px;
-    margin:auto;
+/* ORDER */
+form{
+max-width:500px;
+margin:auto;
 }
 
-input, select {
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-}
-
-/* WHATSAPP BUTTON */
-.whatsapp {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    font-size:20px;
-    text-decoration:none;
+input,select,textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
 }
 
 /* FOOTER */
-footer {
-    background:#333;
-    color:white;
-    padding:10px;
+footer{
+background:#ff4d6d;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:20px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="topbar">
+🎁 Special Offer: 10% OFF Birthday | 15% Anniversary | 20% Wedding
+</div>
+
 <header>
-<h1 id="title">🌸 Petals of Paradise</h1>
+<div class="logo">🌸 Petals of Paradise</div>
 <nav>
-<a href="#home">Home</a>
-<a href="#products">Bouquets</a>
-<a href="#offers">Offers</a>
-<a href="#order">Order</a>
-<button class="lang-btn" onclick="toggleLang()">🇳🇵</button>
+<a href="#">Home</a>
+<a href="#">Bouquets</a>
+<a href="#">Offers</a>
+<a href="#">Order</a>
 </nav>
 </header>
 
 <!-- HERO -->
-<div class="hero" id="home">
-<div>
-<h1 id="tagline">“Blossoming Love from the Heart of Nepal”</h1>
-<p id="sub">Handmade Bouquets | Crochet Flowers | Butwal</p>
+<div class="hero">
+<div class="hero-text">
+<h1>Petals of Paradise</h1>
+<p>Handmade with Love, Delivered in Butwal 🇳🇵</p>
+<a class="btn">ORDER NOW</a>
 </div>
+
+<img src="https://images.unsplash.com/photo-1603575448363-0f07d9a3c0d3">
 </div>
 
 <!-- PRODUCTS -->
-<section id="products">
-<h2>Our Bouquets 💐</h2>
+<section>
+<h2>Our Beautiful Bouquets 💐</h2>
 
-<div class="container">
+<div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
-<h3>Rose Love Bouquet</h3>
-<p class="price">Rs. 1200</p>
+<img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d">
+<h3>Red Rose Bouquet</h3>
+<p class="price">Rs.1200</p>
+<a class="btn">Order Now</a>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
-<h3>Mixed Flower Bouquet</h3>
-<p class="price">Rs. 1500</p>
+<h3>Lily & Rose</h3>
+<p class="price">Rs.1600</p>
+<a class="btn">Order Now</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df">
-<h3>Sunflower Happiness</h3>
-<p class="price">Rs. 1300</p>
+<img src="https://images.unsplash.com/photo-1470165510883-0a4c3c0f2d9c">
+<h3>Sunflower Bouquet</h3>
+<p class="price">Rs.1400</p>
+<a class="btn">Order Now</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9">
-<h3>Handmade Paper Bouquet</h3>
-<p class="price">Rs. 1000</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
-<h3>Wedding Floral Set</h3>
-<p class="price">Rs. 5000+</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1505236731924-18e3d2e7b94c">
-<h3>Birthday Special Bouquet</h3>
-<p class="price">Rs. 1100</p>
+<img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
+<h3>Mixed Flowers</h3>
+<p class="price">Rs.1300</p>
+<a class="btn">Order Now</a>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec">
-<h3>Crochet Handmade Bouquet 🧶</h3>
-<p class="price">Rs. 1800</p>
+<h3>Crochet Rose Bouquet 🧶</h3>
+<p class="price">Rs.1800</p>
+<a class="btn">Order Now</a>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1">
-<h3>Eternal Artificial Bouquet</h3>
-<p class="price">Rs. 1400</p>
+<h3>Tulip Bouquet</h3>
+<p class="price">Rs.1500</p>
+<a class="btn">Order Now</a>
 </div>
 
 </div>
 </section>
 
 <!-- OFFERS -->
-<section id="offers">
+<section>
 <h2>Special Offers 🎉</h2>
 
-<div class="offer">
-<p>🎂 Birthday Offer: 10% Discount on your special day</p>
-<p>💍 Anniversary Offer: Flat Rs. 200 OFF</p>
-<p>💒 Wedding Package: Free decoration consultation</p>
-<p>🎁 Surprise Combo: Bouquet + Chocolate at Rs. 1800</p>
+<div class="offers">
+
+<div class="offer-box">
+<h3>🎂 Birthday</h3>
+<p>10% OFF</p>
+</div>
+
+<div class="offer-box">
+<h3>💍 Anniversary</h3>
+<p>15% OFF</p>
+</div>
+
+<div class="offer-box">
+<h3>💒 Wedding</h3>
+<p>20% OFF</p>
+</div>
+
+<div class="offer-box">
+<h3>🎁 Combo</h3>
+<p>Bouquet + Chocolate Rs.1800</p>
+</div>
+
 </div>
 </section>
 
 <!-- ORDER -->
-<section id="order">
+<section>
 <h2>Order Online 🛒</h2>
 
 <form>
-<input type="text" placeholder="Your Name" required>
-<input type="text" placeholder="Phone Number" required>
+<input placeholder="Your Name" required>
+<input placeholder="Phone Number" required>
 
 <select>
 <option>Select Bouquet</option>
-<option>Rose Bouquet</option>
-<option>Crochet Bouquet</option>
-<option>Wedding Package</option>
+<option>Rose</option>
+<option>Crochet</option>
+<option>Wedding</option>
 </select>
 
 <input type="date">
+<textarea placeholder="Message"></textarea>
 
-<input type="submit" value="Place Order">
+<input type="submit" value="Place Order" class="btn">
 </form>
 </section>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/97798XXXXXXXX" target="_blank">💬</a>
-
 <footer>
-<p>© 2026 Petals of Paradise | Made with ❤️ in Nepal 🇳🇵</p>
+<p>© 2026 Petals of Paradise | Butwal Nepal 🇳🇵</p>
 </footer>
 
-<script>
-function toggleLang() {
-    let title = document.getElementById("title");
-    let tagline = document.getElementById("tagline");
-    let sub = document.getElementById("sub");
-
-    if(title.innerHTML.includes("Petals")) {
-        title.innerHTML = "🌸 स्वर्गीय फूल";
-        tagline.innerHTML = "नेपालको मुटुबाट फुल्ने माया";
-        sub.innerHTML = "हातले बनाइएको बुके | बुटवल";
-    } else {
-        title.innerHTML = "🌸 Petals of Paradise";
-        tagline.innerHTML = "Blossoming Love from the Heart of Nepal";
-        sub.innerHTML = "Handmade Bouquets | Butwal";
-    }
-}
-</script>
+<a class="whatsapp" href="https://wa.me/97798XXXXXXXX">💬</a>
 
 </body>
 </html>
