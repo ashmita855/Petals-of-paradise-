@@ -3,162 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Petals of Paradise</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<title>Petal of Paradise - Flowers & Event Decoration</title>
 
 <style>
-body{
-margin:0;
-font-family:Poppins;
-background:#fff6f8;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#fff8fb;color:#333;line-height:1.6;}
 
-/* TOP BAR */
-.topbar{
-background:#ff4d6d;
-color:white;
-text-align:center;
-padding:8px;
-font-size:14px;
-}
-
-/* NAVBAR */
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
-}
-
-.logo{
-color:#ff4d6d;
-font-weight:700;
-font-size:22px;
-}
-
-nav a{
-margin:0 10px;
-text-decoration:none;
-color:#333;
-}
-
-/* HERO */
-.hero{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:60px;
-background:linear-gradient(to right,#ffe5ec,#fff);
-}
-
-.hero h1{
-font-family:'Playfair Display';
-font-size:50px;
-color:#ff4d6d;
-margin:0;
-}
-
-.hero p{
-color:#555;
-}
-
-.hero img{
-width:420px;
-border-radius:20px;
-}
-
-/* BUTTON */
-.btn{
-background:#ff4d6d;
+background:linear-gradient(120deg,#ff4d8d,#ffb6c1);
+padding:20px;
 color:white;
-padding:10px 18px;
-border-radius:6px;
-text-decoration:none;
-display:inline-block;
-margin-top:10px;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-/* SECTION */
-section{
-padding:50px;
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+max-width:1200px;
+margin:auto;
+}
+
+nav h1{font-size:28px;}
+nav ul{list-style:none;display:flex;gap:20px;}
+nav ul li a{color:white;text-decoration:none;font-weight:bold;}
+
+.hero{
+background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover;
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
 text-align:center;
+padding:20px;
 }
 
-h2{
-color:#ff4d6d;
+.hero h2{
+font-size:50px;
+background:rgba(0,0,0,0.4);
+padding:20px;
+border-radius:10px;
 }
 
-/* GRID */
-.grid{
+.section{
+max-width:1200px;
+margin:50px auto;
+padding:20px;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:30px;
+color:#ff4d8d;
+}
+
+.cards{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:20px;
 }
 
 .card{
 background:white;
+padding:20px;
 border-radius:15px;
-padding:10px;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
 }
+
+.card:hover{transform:translateY(-5px);}
 
 .card img{
 width:100%;
-height:200px;
-object-fit:cover;
 border-radius:10px;
+height:180px;
+object-fit:cover;
 }
 
-.price{
-color:#ff4d6d;
-font-weight:bold;
-}
-
-/* OFFERS */
-.offers{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.offer{
-background:white;
+.discount{
+background:#ffe0eb;
 padding:20px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* ORDER */
-form{
-max-width:500px;
-margin:auto;
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-input,select,textarea{
-width:100%;
-padding:10px;
-margin:10px 0;
-border:1px solid #ddd;
-border-radius:5px;
-}
-
-/* FOOTER */
-footer{
-background:#ff4d6d;
-color:white;
-padding:30px;
 text-align:center;
+border-radius:10px;
+margin-bottom:30px;
 }
 
-/* WHATSAPP */
+button{
+background:#ff4d8d;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:8px;
+cursor:pointer;
+margin-top:10px;
+}
+
+button:hover{background:#e63c7a;}
+
+footer{
+background:#ff4d8d;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:50px;
+}
+
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -166,149 +118,152 @@ right:20px;
 background:#25D366;
 color:white;
 padding:15px;
-border-radius:50%;
-font-size:22px;
+border-radius:50px;
 text-decoration:none;
+font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<div class="topbar">
-🎁 Special Offer: 10% OFF Birthday Orders | 15% OFF Anniversary & Wedding Bookings
-</div>
-
 <header>
-<div class="logo">🌸 Petals of Paradise</div>
 <nav>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Bouquets</a>
-<a href="#">Services</a>
-<a href="#">Offers</a>
-<a href="#">Contact</a>
+<h1>Petal of Paradise 🌸</h1>
+<ul>
+<li><a href="#services">Services</a></li>
+<li><a href="#bouquet">Bouquets</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#order">Order</a></li>
+</ul>
 </nav>
 </header>
 
-<!-- HERO -->
 <div class="hero">
-<div>
-<p>फूलले बोल्छ मनका कुरा ❤️</p>
-<h1>Petals of Paradise</h1>
-<p>Handmade with Love, Delivered with Happiness</p>
-<p>📍 Butwal, Nepal</p>
-<a class="btn">ORDER NOW 🛒</a>
+<h2>Flowers that Speak Love & Celebration</h2>
 </div>
 
-<img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d">
+<section class="section" id="services">
+
+<h2>Our Services</h2>
+
+<div class="discount">
+<h3>🎉 Special Discounts</h3>
+<p>Birthday Decoration up to 25% OFF | Wedding Packages Available</p>
 </div>
 
-<!-- PRODUCTS -->
-<section>
-<h2>🌸 Our Beautiful Bouquets 🌸</h2>
+<div class="cards">
 
-<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1526045478516-99145907023c">
+<h3>Custom Bouquet Design</h3>
+<p>Personalized floral arrangements designed just for you.</p>
+<button>Order Now</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321">
+<h3>Readymade Bouquets</h3>
+<p>Beautiful bouquets ready for any occasion.</p>
+<button>Buy Now</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92">
+<h3>Event Floral Arrangement</h3>
+<p>Wedding, parties & corporate floral decoration.</p>
+<button>Book Service</button>
+</div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946">
-<h3>Classic Red Rose</h3>
-<p class="price">Rs.1200</p>
-<a class="btn">Order Now</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
-<h3>Lily & Rose</h3>
-<p class="price">Rs.1600</p>
-<a class="btn">Order Now</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1470165510883-0a4c3c0f2d9c">
-<h3>Sunflower Bouquet</h3>
-<p class="price">Rs.1400</p>
+<h3>DIY Flower Kit</h3>
+<p>Create your own floral magic at home.</p>
+<button>Explore</button>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df">
-<h3>Mixed Flowers</h3>
-<p class="price">Rs.1300</p>
+<h3>Crochet Flowers</h3>
+<p>Handmade artistic crochet floral designs.</p>
+<button>View</button>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1600857544200-b2f666a9a2ec">
-<h3>Crochet Bouquet 🧶</h3>
-<p class="price">Rs.1800</p>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1">
-<h3>Tulip Bouquet</h3>
-<p class="price">Rs.1500</p>
-</div>
-
-</div>
-
-<a class="btn">VIEW ALL BOUQUETS 🌸</a>
-</section>
-
-<!-- OFFERS -->
-<section>
-<h2>🎉 Special Offers 🎉</h2>
-
-<div class="offers">
-
-<div class="offer">
-<h3>🎂 Birthday Offer</h3>
-<p>10% OFF</p>
-</div>
-
-<div class="offer">
-<h3>💍 Anniversary</h3>
-<p>15% OFF</p>
-</div>
-
-<div class="offer">
-<h3>💒 Wedding</h3>
-<p>20% OFF</p>
-</div>
-
-<div class="offer">
-<h3>🎁 Combo</h3>
-<p>Bouquet + Chocolate Rs.1800</p>
+<img src="https://images.unsplash.com/photo-1487537708572-3c850b5e856e">
+<h3>Custom Message Cards</h3>
+<p>Send emotions with personalized cards.</p>
+<button>Customize</button>
 </div>
 
 </div>
 </section>
 
-<!-- ORDER -->
-<section>
-<h2>🛒 Order Online</h2>
+<section class="section" id="events">
+<h2>Event Decoration Services</h2>
 
-<form>
-<input placeholder="Your Name">
-<input placeholder="Phone Number">
+<div class="cards">
 
-<select>
-<option>Select Bouquet</option>
-<option>Rose</option>
-<option>Sunflower</option>
-<option>Crochet</option>
-</select>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1529634891775-1c2c3f1c3a62">
+<h3>Wedding Decoration</h3>
+<p>Elegant floral wedding setups & stage decoration.</p>
+<button>Book Wedding</button>
+</div>
 
-<input type="date">
-<textarea placeholder="Message"></textarea>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce">
+<h3>Birthday Decoration</h3>
+<p>Colorful themed birthday setups with discounts.</p>
+<button>Book Birthday</button>
+</div>
 
-<input type="submit" value="Place Order" class="btn">
-</form>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3">
+<h3>Corporate Events</h3>
+<p>Professional floral decoration for corporate events.</p>
+<button>Contact Us</button>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="order">
+<h2>Online Ordering & Delivery</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🛒 Online Order System</h3>
+<p>Order flowers easily through our website anytime.</p>
+<button>Start Order</button>
+</div>
+
+<div class="card">
+<h3>📱 WhatsApp Order</h3>
+<p>Quick ordering via WhatsApp chat support.</p>
+<button onclick="window.open('https://wa.me/1234567890')">Chat Now</button>
+</div>
+
+<div class="card">
+<h3>🚚 Same Day Delivery</h3>
+<p>Fresh flowers delivered on the same day.</p>
+</div>
+
+<div class="card">
+<h3>📦 Subscription Service</h3>
+<p>Weekly & monthly flower subscription plans.</p>
+</div>
+
+</div>
 </section>
 
 <footer>
-<p>© 2026 Petals of Paradise | Made with ❤️ in Nepal 🇳🇵</p>
+<p>© 2026 Petal of Paradise | Flowers & Event Decoration</p>
+<p>Made with love for celebrations 🌸</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/97798XXXXXXXX">💬</a>
+<a class="whatsapp" href="https://wa.me/1234567890">WhatsApp Us</a>
 
 </body>
 </html>
