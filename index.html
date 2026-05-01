@@ -1,283 +1,904 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Petal of Paradise</title>
-
-<style>
-body{margin:0;font-family:Arial;background:#fff5f8;}
-
-header{
-background:linear-gradient(135deg,#ff4d8d,#ff9bbf);
-padding:15px;
-color:white;
-position:sticky;
-top:0;
-}
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-max-width:1200px;
-margin:auto;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-font-size:24px;
-font-weight:bold;
-}
-
-.logo img{
-width:45px;
-height:45px;
-border-radius:50%;
-object-fit:cover;
-}
-
-nav ul{
-display:flex;
-gap:15px;
-list-style:none;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-weight:bold;
-}
-
-.hero{
-background:url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6') center/cover;
-height:85vh;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-text-align:center;
-}
-
-.hero h1{
-background:rgba(0,0,0,0.4);
-padding:20px;
-border-radius:10px;
-font-size:50px;
-}
-
-section{
-max-width:1200px;
-margin:auto;
-padding:50px 20px;
-}
-
-h2{text-align:center;color:#ff4d8d;}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
-
-.card img{
-width:100%;
-height:180px;
-object-fit:cover;
-}
-
-.card div{padding:15px;}
-
-button{
-background:#ff4d8d;
-color:white;
-border:none;
-padding:10px;
-border-radius:8px;
-cursor:pointer;
-margin-top:10px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Petals of Paradise - floral bouquets, event decoration, birthday discounts, wedding decoration, crochet flowers, DIY flower kits, online ordering, WhatsApp orders, and same-day delivery in Nepal." />
+  <meta name="keywords" content="Petals of Paradise, flower shop Nepal, bouquet design, birthday decoration, wedding decoration, floral arrangement, crochet flowers, DIY flower kit, WhatsApp order, same day delivery" />
+  <meta name="author" content="Petals of Paradise" />
+  <title>Petals of Paradise | Flowers, Bouquets & Event Decoration</title>
+  <style>
+    :root{
+      --bg:#fff8fb;
+      --bg2:#fff1f7;
+      --card:#ffffff;
+      --text:#2d1f2b;
+      --muted:#6d5a67;
+      --primary:#d94f8a;
+      --primary2:#ff7aa7;
+      --accent:#f7b267;
+      --accent2:#7bc6cc;
+      --green:#65b891;
+      --shadow:0 18px 45px rgba(208, 77, 138, .12);
+      --radius:24px;
+      --border:1px solid rgba(217,79,138,.12);
+      --container:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(255,122,167,.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(247,178,103,.15), transparent 24%),
+        linear-gradient(180deg, var(--bg), #fff);
+    }
+    img{max-width:100%; display:block}
+    a{text-decoration:none; color:inherit}
+    button, input, textarea, select{font:inherit}
+    .container{width:min(100% - 32px, var(--container)); margin:0 auto}
+    .topbar{
+      background:linear-gradient(90deg, var(--primary), #b93d70);
+      color:#fff;
+      font-size:.95rem;
+      padding:10px 0;
+    }
+    .topbar .flex{display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(255,255,255,.15); padding:8px 14px; border-radius:999px;
+      backdrop-filter: blur(10px);
+    }
+    header{
+      position:sticky; top:0; z-index:60;
+      background:rgba(255,248,251,.86);
+      backdrop-filter: blur(16px);
+      border-bottom:var(--border);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      padding:14px 0;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .logo{
+      width:54px; height:54px; border-radius:18px;
+      display:grid; place-items:center;
+      background:linear-gradient(135deg, #ff7aa7, #ffcf9f);
+      box-shadow:var(--shadow);
+      flex:0 0 auto;
+    }
+    .brand h1{margin:0; font-size:1.2rem; line-height:1.1}
+    .brand p{margin:4px 0 0; color:var(--muted); font-size:.87rem}
+    .navlinks{display:flex; gap:18px; flex-wrap:wrap; align-items:center}
+    .navlinks a{color:var(--muted); font-weight:600; font-size:.96rem}
+    .navlinks a:hover{color:var(--primary)}
+    .nav-actions{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 18px; border-radius:999px; border:0; cursor:pointer;
+      transition:.25s ease; font-weight:700;
+    }
+    .btn-primary{background:linear-gradient(135deg, var(--primary), var(--primary2)); color:#fff; box-shadow:var(--shadow)}
+    .btn-secondary{background:#fff; color:var(--primary); border:var(--border)}
+    .btn:hover{transform:translateY(-2px)}
+    .menu-toggle{display:none; background:#fff; border:var(--border); width:48px; height:48px; border-radius:14px}
+    .hero{
+      padding:42px 0 20px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:28px;
+      align-items:center;
+    }
+    .hero-copy h2{
+      font-size:clamp(2.2rem, 5vw, 4.7rem);
+      line-height:1.02;
+      margin:14px 0 16px;
+      letter-spacing:-.03em;
+    }
+    .hero-copy p{font-size:1.05rem; color:var(--muted); line-height:1.8; max-width:62ch}
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin:24px 0}
+    .stats{display:grid; grid-template-columns:repeat(4, minmax(0, 1fr)); gap:14px; margin-top:24px}
+    .stat{
+      background:rgba(255,255,255,.75);
+      border:var(--border); border-radius:20px; padding:16px;
+      box-shadow:var(--shadow)
+    }
+    .stat strong{display:block; font-size:1.45rem; margin-bottom:6px}
+    .stat span{color:var(--muted); font-size:.92rem}
+    .hero-visual{
+      background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,245,249,.92));
+      border:var(--border); border-radius:32px; padding:18px;
+      box-shadow:var(--shadow);
+    }
+    .hero-card{
+      position:relative; overflow:hidden;
+      border-radius:26px;
+      min-height:540px;
+      background:
+        radial-gradient(circle at 18% 20%, rgba(255,122,167,.25), transparent 18%),
+        radial-gradient(circle at 78% 18%, rgba(247,178,103,.25), transparent 20%),
+        linear-gradient(180deg, #fff, #fff5f8);
+      border:1px solid rgba(217,79,138,.10);
+      display:grid; place-items:end center;
+      padding:24px;
+    }
+    .hero-card .floating{
+      position:absolute; border-radius:22px; background:rgba(255,255,255,.72);
+      padding:12px 14px; box-shadow:var(--shadow); border:var(--border);
+      backdrop-filter:blur(8px);
+      font-size:.92rem; font-weight:700;
+    }
+    .float-1{top:18px; left:18px}
+    .float-2{top:26px; right:18px}
+    .float-3{bottom:120px; left:18px}
+    .float-4{bottom:34px; right:18px}
+    .hero-art{
+      width:min(100%, 480px); aspect-ratio:1 / 1;
+      display:grid; place-items:center;
+    }
+    .section{padding:42px 0}
+    .section-head{
+      display:flex; align-items:end; justify-content:space-between; gap:16px; flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .section-head h3{margin:0; font-size:clamp(1.6rem, 3vw, 2.4rem)}
+    .section-head p{margin:6px 0 0; color:var(--muted); max-width:68ch; line-height:1.7}
+    .pill-row{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px}
+    .pill{padding:10px 14px; border-radius:999px; background:#fff; border:var(--border); color:var(--muted); font-weight:600}
+    .grid-4{display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:18px}
+    .grid-3{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+    .grid-2{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px}
+    .card{
+      background:rgba(255,255,255,.92); border:var(--border); border-radius:var(--radius);
+      box-shadow:var(--shadow); overflow:hidden;
+    }
+    .service-card{display:flex; flex-direction:column; min-height:100%}
+    .service-card .media{
+      aspect-ratio: 1.15 / 1;
+      background:#fde8f0;
+      border-bottom:var(--border);
+      position:relative;
+      overflow:hidden;
+    }
+    .service-card .media img{width:100%; height:100%; object-fit:cover}
+    .service-card .body{padding:18px}
+    .service-card h4{margin:0 0 8px; font-size:1.1rem}
+    .service-card p{margin:0; color:var(--muted); line-height:1.7; font-size:.96rem}
+    .meta-row{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:16px; flex-wrap:wrap}
+    .price{font-weight:800; color:var(--primary)}
+    .tag{font-size:.8rem; padding:7px 10px; border-radius:999px; background:rgba(217,79,138,.09); color:var(--primary); font-weight:700}
+    .offer-banner{
+      background:linear-gradient(135deg, #ffd8e7, #fff2d6);
+      border-radius:32px;
+      padding:26px;
+      border:1px solid rgba(217,79,138,.10);
+      box-shadow:var(--shadow)
+    }
+    .offer-banner .inner{display:grid; grid-template-columns: 1fr auto; gap:20px; align-items:center}
+    .offer-banner h4{margin:0 0 10px; font-size:1.65rem}
+    .offer-banner p{margin:0; color:var(--muted); line-height:1.8}
+    .discounts{display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:16px; margin-top:22px}
+    .discount-box{
+      background:#fff; border-radius:24px; padding:20px; border:var(--border);
+      box-shadow:var(--shadow)
+    }
+    .discount-box strong{display:block; font-size:1.6rem; margin-bottom:8px; color:var(--primary)}
+    .discount-box span{color:var(--muted)}
+    .split{
+      display:grid; grid-template-columns:1.05fr .95fr; gap:22px; align-items:center;
+    }
+    .info-list{display:grid; gap:12px; margin-top:18px}
+    .info-item{
+      display:flex; gap:12px; align-items:flex-start; padding:14px 16px; background:#fff; border-radius:18px;
+      border:var(--border)
+    }
+    .info-icon{
+      width:42px; height:42px; border-radius:14px; display:grid; place-items:center; flex:0 0 auto;
+      background:linear-gradient(135deg, rgba(217,79,138,.16), rgba(247,178,103,.18)); color:var(--primary);
+      font-weight:900;
+    }
+    .info-item h5{margin:0 0 4px; font-size:1rem}
+    .info-item p{margin:0; color:var(--muted); line-height:1.65}
+    .gallery{
+      display:grid; grid-template-columns:repeat(12,1fr); gap:16px;
+    }
+    .gallery figure{
+      margin:0; border-radius:24px; overflow:hidden; position:relative; min-height:220px; border:var(--border);
+      box-shadow:var(--shadow); background:#fff;
+    }
+    .gallery figure img{width:100%; height:100%; object-fit:cover}
+    .g1{grid-column:span 5}
+    .g2{grid-column:span 4}
+    .g3{grid-column:span 3}
+    .g4{grid-column:span 4}
+    .g5{grid-column:span 5}
+    .g6{grid-column:span 3}
+    .overlay-caption{
+      position:absolute; inset:auto 16px 16px 16px;
+      padding:12px 14px; border-radius:16px; background:rgba(255,255,255,.82); backdrop-filter:blur(8px);
+      font-weight:700; color:var(--text)
+    }
+    .testimonials{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+    .quote{
+      padding:22px; border-radius:24px; background:#fff; border:var(--border); box-shadow:var(--shadow)
+    }
+    .quote p{margin:0 0 14px; color:var(--muted); line-height:1.8}
+    .quote .who{display:flex; align-items:center; gap:12px}
+    .avatar{width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, #ff7aa7, #ffcf9f)}
+    .who strong{display:block}
+    .who span{font-size:.88rem; color:var(--muted)}
+    .pricing{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+    .price-card{padding:24px}
+    .price-card.featured{border:2px solid rgba(217,79,138,.35); transform:translateY(-6px)}
+    .price-card h4{margin:0 0 8px; font-size:1.2rem}
+    .price-card .amount{font-size:2.2rem; font-weight:900; color:var(--primary); margin:12px 0}
+    .price-card ul{margin:0; padding-left:18px; color:var(--muted); line-height:1.9}
+    .price-card .btn{width:100%; margin-top:18px}
+    .form-wrap{background:#fff; border:var(--border); border-radius:30px; box-shadow:var(--shadow); overflow:hidden}
+    .form-grid{display:grid; grid-template-columns:1fr 1fr; gap:0}
+    .form-panel{padding:26px}
+    .form-panel.soft{background:linear-gradient(180deg, #fff5f9, #fff9f2)}
+    form{display:grid; gap:14px}
+    .field{display:grid; gap:8px}
+    .field label{font-weight:700; font-size:.95rem}
+    .field input, .field select, .field textarea{
+      width:100%; padding:14px 16px; border-radius:16px; border:1px solid rgba(45,31,43,.12);
+      background:#fff; outline:none;
+    }
+    .field textarea{min-height:130px; resize:vertical}
+    .field input:focus, .field select:focus, .field textarea:focus{border-color:rgba(217,79,138,.5); box-shadow:0 0 0 4px rgba(217,79,138,.08)}
+    .contact-grid{display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:18px}
+    .contact-card{padding:22px; text-align:center}
+    .contact-card h4{margin:12px 0 8px}
+    .contact-card p{margin:0; color:var(--muted); line-height:1.7}
+    .icon-bubble{
+      width:62px; height:62px; border-radius:20px; display:grid; place-items:center;
+      margin:0 auto; background:linear-gradient(135deg, rgba(217,79,138,.14), rgba(247,178,103,.17));
+      font-size:1.5rem
+    }
+    footer{
+      margin-top:26px; padding:34px 0 26px; background:linear-gradient(180deg, rgba(255,248,251,0), rgba(255,241,247,.9));
+      border-top:var(--border)
+    }
+    .footer-grid{display:grid; grid-template-columns:1.2fr .8fr .8fr 1fr; gap:18px}
+    .footer-grid h5{margin:0 0 12px; font-size:1rem}
+    .footer-grid p, .footer-grid a{color:var(--muted); line-height:1.8}
+    .footer-grid a:hover{color:var(--primary)}
+    .small{font-size:.9rem; color:var(--muted)}
+    .whatsapp-fab{
+      position:fixed; right:18px; bottom:18px; z-index:70;
+      width:58px; height:58px; border-radius:50%; display:grid; place-items:center;
+      background:#25D366; color:#fff; box-shadow:0 16px 35px rgba(37,211,102,.35); font-size:1.65rem;
+    }
+    .back-to-top{
+      position:fixed; right:18px; bottom:90px; z-index:70;
+      width:50px; height:50px; border-radius:16px; border:0; cursor:pointer;
+      background:#fff; box-shadow:var(--shadow); display:grid; place-items:center; color:var(--primary); opacity:0; pointer-events:none;
+      transition:.25s ease;
+    }
+    .back-to-top.show{opacity:1; pointer-events:auto}
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    .mini{font-size:.88rem}
+    .divider{height:1px; background:linear-gradient(90deg, transparent, rgba(217,79,138,.15), transparent); margin:18px 0}
+    .searchbar{
+      display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;
+    }
+    .searchbar input{
+      flex:1 1 260px; padding:14px 16px; border-radius:999px; border:1px solid rgba(45,31,43,.12); background:#fff;
+    }
+    .searchbar .btn{padding-inline:18px}
+    .lang-toggle{display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border-radius:999px; border:var(--border); background:#fff; cursor:pointer; font-weight:700; color:var(--primary)}
+    .hide{display:none !important}
+    .kicker{display:inline-flex; align-items:center; gap:8px; background:rgba(217,79,138,.09); color:var(--primary); border-radius:999px; padding:9px 14px; font-weight:700}
+    .emoji{font-size:1.1rem}
+    .floating-note{font-size:.8rem; font-weight:700; color:var(--primary)}
+    @media (max-width: 1080px){
+      .hero-grid, .split, .form-grid, .footer-grid{grid-template-columns:1fr}
+      .stats, .grid-4, .grid-3, .discounts, .testimonials, .pricing, .contact-grid{grid-template-columns:repeat(2, minmax(0,1fr))}
+      .g1,.g2,.g3,.g4,.g5,.g6{grid-column:span 6}
+      .hero-card{min-height:440px}
+    }
+    @media (max-width: 760px){
+      .navlinks{display:none; width:100%; padding:12px 0 2px}
+      .navlinks.show{display:flex; flex-direction:column; align-items:flex-start; gap:12px}
+      .menu-toggle{display:grid; place-items:center}
+      .stats, .grid-4, .grid-3, .discounts, .testimonials, .pricing, .contact-grid, .stats{grid-template-columns:1fr}
+      .g1,.g2,.g3,.g4,.g5,.g6{grid-column:span 12}
+      .offer-banner .inner{grid-template-columns:1fr}
+      .hero{padding-top:24px}
+      .hero-actions .btn{width:100%}
+      .nav{flex-wrap:wrap}
+      .nav-actions{width:100%; justify-content:space-between}
+      .hero-card{min-height:360px}
+    }
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <div class="container flex">
+      <div class="badge">🌸 Petals of Paradise • Flowers for every beautiful moment</div>
+      <div>Same-day delivery • WhatsApp order • Birthday & wedding discounts</div>
+    </div>
+  </div>
 
-<header>
-<nav>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home">
+        <div class="logo" aria-label="Petals of Paradise logo">🌷</div>
+        <div>
+          <h1>Petals of Paradise</h1>
+          <p>Flowers • Bouquets • Events • Decoration</p>
+        </div>
+      </a>
 
-<div class="logo">
-<img src="full of image.jpg" alt="logo">
-Petal of Paradise
-</div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
 
-<ul>
-<li><a href="#services">Services</a></li>
-<li><a href="#flowers">Flowers</a></li>
-<li><a href="#events">Events</a></li>
-<li><a href="#delivery">Delivery</a></li>
-</ul>
+      <nav class="navlinks" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#offers">Offers</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#pricing">Packages</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-</nav>
-</header>
+      <div class="nav-actions">
+        <button class="lang-toggle" id="langBtn" type="button">🇳🇵 नेपाली / EN</button>
+        <a class="btn btn-secondary" href="#order">Order Now</a>
+      </div>
+    </div>
+  </header>
 
-<div class="hero">
-<h1>🌸 Petal of Paradise 🌸<br>Flowers That Tell Your Story</h1>
-</div>
+  <main id="home" class="hero">
+    <div class="container hero-grid">
+      <section class="hero-copy">
+        <span class="kicker"><span class="emoji">💐</span> Fresh flowers, creative design, and celebration magic</span>
+        <h2>Beautiful flowers for birthdays, weddings, events, and everyday joy.</h2>
+        <p>
+          Petals of Paradise creates elegant floral experiences in Nepal with custom bouquet design, readymade bouquets,
+          floral arrangements for events, crochet flowers, DIY flower kits, personalized packaging, and digital ordering.
+        </p>
 
-<!-- FLOWERS -->
-<section id="flowers">
-<h2>🌷 Flower Collection</h2>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#services">Explore Services</a>
+          <a class="btn btn-secondary" href="#order">WhatsApp Order</a>
+        </div>
 
-<div class="grid">
+        <div class="pill-row">
+          <span class="pill">Birthday Decoration Discounts</span>
+          <span class="pill">Wedding Flower Setup</span>
+          <span class="pill">Same-Day Delivery</span>
+          <span class="pill">Subscription Service</span>
+        </div>
 
-<div class="card">
-<img src="rose.jpg" alt="Rose Bouquet">
-<div>
-<h3>Rose Bouquet 🌹</h3>
-<p>Classic romantic red roses bouquet.</p>
-<button>Order</button>
-</div>
-</div>
+        <div class="stats">
+          <div class="stat"><strong>40+</strong><span>Custom bouquet styles</span></div>
+          <div class="stat"><strong>24/7</strong><span>Online ordering support</span></div>
+          <div class="stat"><strong>Same Day</strong><span>Delivery available</span></div>
+          <div class="stat"><strong>100%</strong><span>Fresh and handmade care</span></div>
+        </div>
+      </section>
 
-<div class="card">
-<img src="tulop.jpg" alt="Tulip Bouque">
-<div>
-<h3>Tulip Bouquet 🌷</h3>
-<p>Fresh colorful tulips for elegance.</p>
-<button>Order</button>
-</div>
-</div>
+      <aside class="hero-visual">
+        <div class="hero-card">
+          <div class="floating float-1">🌹 Rose bouquet design</div>
+          <div class="floating float-2">🌻 Event floral styling</div>
+          <div class="floating float-3">🎀 Personalized packaging</div>
+          <div class="floating float-4">📦 Online order ready</div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
-<div>
-<h3>Sunflower Bouquet 🌻</h3>
-<p>Bright and happy sunflower arrangement.</p>
-<button>Order</button>
-</div>
-</div>
+          <div class="hero-art" aria-label="Beautiful floral showcase illustration">
+            <img alt="Floral showcase of roses, tulips, sunflowers, and mixed bouquet" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?>
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 800'>
+              <defs>
+                <linearGradient id='bg' x1='0' y1='0' x2='1' y2='1'>
+                  <stop offset='0%' stop-color='%23fff6fa'/>
+                  <stop offset='100%' stop-color='%23fff0da'/>
+                </linearGradient>
+                <linearGradient id='stem' x1='0' y1='0' x2='0' y2='1'>
+                  <stop offset='0%' stop-color='%2365b891'/>
+                  <stop offset='100%' stop-color='%233b8f67'/>
+                </linearGradient>
+                <filter id='shadow' x='-30%' y='-30%' width='160%' height='160%'>
+                  <feDropShadow dx='0' dy='16' stdDeviation='18' flood-color='%23d94f8a' flood-opacity='.18'/>
+                </filter>
+              </defs>
+              <rect width='800' height='800' rx='60' fill='url(%23bg)'/>
+              <circle cx='400' cy='400' r='240' fill='%23fff' opacity='.55'/>
+              <g filter='url(%23shadow)'>
+                <path d='M402 690 C395 600, 391 530, 372 450' stroke='url(%23stem)' stroke-width='18' fill='none' stroke-linecap='round'/>
+                <path d='M406 690 C420 590, 445 530, 468 460' stroke='url(%23stem)' stroke-width='18' fill='none' stroke-linecap='round'/>
+                <path d='M390 690 C360 610, 324 540, 300 470' stroke='url(%23stem)' stroke-width='18' fill='none' stroke-linecap='round'/>
+                <path d='M418 690 C455 615, 495 560, 538 485' stroke='url(%23stem)' stroke-width='18' fill='none' stroke-linecap='round'/>
+                <circle cx='335' cy='318' r='74' fill='%23ff7aa7'/>
+                <circle cx='335' cy='318' r='52' fill='%23ffd4e4'/>
+                <circle cx='492' cy='286' r='70' fill='%23f7b267'/>
+                <circle cx='492' cy='286' r='49' fill='%23fff1d8'/>
+                <g transform='translate(230 210)'>
+                  <circle cx='110' cy='104' r='64' fill='%23ff93bc'/>
+                  <circle cx='110' cy='104' r='40' fill='%23fff2f7'/>
+                  <path d='M88 104h44M110 82v44M93 87l34 34M127 87l-34 34' stroke='%23d94f8a' stroke-width='7' stroke-linecap='round'/>
+                </g>
+                <g transform='translate(445 200)'>
+                  <circle cx='110' cy='104' r='62' fill='%23ffd45c'/>
+                  <circle cx='110' cy='104' r='36' fill='%23fff8d9'/>
+                  <path d='M110 45v118M51 104h118M68 62l84 84M152 62l-84 84' stroke='%23f6a31a' stroke-width='8' stroke-linecap='round'/>
+                </g>
+                <g transform='translate(270 360)'>
+                  <ellipse cx='110' cy='110' rx='68' ry='58' fill='%23ffcf9f'/>
+                  <ellipse cx='110' cy='110' rx='44' ry='38' fill='%23fff7ef'/>
+                  <circle cx='82' cy='82' r='10' fill='%23f7b267'/>
+                  <circle cx='136' cy='82' r='10' fill='%23f7b267'/>
+                  <circle cx='82' cy='138' r='10' fill='%23f7b267'/>
+                  <circle cx='136' cy='138' r='10' fill='%23f7b267'/>
+                  <circle cx='110' cy='110' r='10' fill='%23d94f8a'/>
+                </g>
+                <path d='M240 690 Q400 745 560 690' fill='none' stroke='%23c97b47' stroke-width='20' stroke-linecap='round'/>
+                <path d='M218 690 Q400 760 582 690' fill='none' stroke='%23b86f41' stroke-width='14' stroke-linecap='round' opacity='.85'/>
+              </g>
+            </svg>" />
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
 
-</div>
-</section>
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h3>Our Services</h3>
+          <p>From classic bouquets to event-stage decoration, our menu is made for celebrations, gifting, daily surprises, and special floral experiences.</p>
+        </div>
+      </div>
 
-<!-- EVENTS -->
-<section id="events">
-<h2>🎉 Event Decoration</h2>
+      <div class="searchbar">
+        <input id="serviceSearch" type="search" placeholder="Search services like bouquet, wedding, crochet, delivery..." />
+        <button class="btn btn-secondary" type="button" onclick="filterServices()">Search Services</button>
+      </div>
 
-<div class="grid">
+      <div class="pill-row" aria-label="Service categories">
+        <span class="pill">Core Services</span>
+        <span class="pill">Creative Services</span>
+        <span class="pill">Experience Services</span>
+        <span class="pill">Digital Services</span>
+        <span class="pill">Delivery Services</span>
+      </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1529634891775-1c2c3f1c3a62">
-<div>
-<h3>Wedding Decoration 💍</h3>
-<p>Luxury floral wedding stage design.</p>
-<button>Book</button>
-</div>
-</div>
+      <div class="grid-3" id="serviceGrid" style="margin-top:18px">
+        <article class="card service-card service-item" data-name="custom bouquet design roses tulip sunflower">
+          <div class="media"><img alt="Custom bouquet design with roses and tulips" src="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Core Service</span>
+            <h4>Custom Bouquet Design</h4>
+            <p>Handcrafted bouquets tailored for your color choice, flower type, budget, and occasion. Great for birthdays, anniversaries, and proposals.</p>
+            <div class="meta-row"><span class="price">Starting from NPR 899</span><span class="mini">🌹 Personalized</span></div>
+          </div>
+        </article>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce">
-<div>
-<h3>Birthday Decoration 🎂</h3>
-<p>Colorful party floral decoration.</p>
-<button>Book</button>
-</div>
-</div>
+        <article class="card service-card service-item" data-name="readymade bouquet quick gift flowers">
+          <div class="media"><img alt="Readymade bouquet ready to gift" src="https://images.unsplash.com/photo-1519378058457-4c29e2b41f15?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Core Service</span>
+            <h4>Readymade Bouquet</h4>
+            <p>Beautiful ready-to-go flower arrangements for fast gifting and surprise delivery. Pick, order, and celebrate instantly.</p>
+            <div class="meta-row"><span class="price">Starting from NPR 599</span><span class="mini">⚡ Fast pickup</span></div>
+          </div>
+        </article>
 
-</div>
-</section>
+        <article class="card service-card service-item" data-name="floral arrangement for events stage wedding corporate decoration">
+          <div class="media"><img alt="Floral event arrangement with stage decoration" src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Core Service</span>
+            <h4>Floral Arrangement for Events</h4>
+            <p>Elegant stage setups, entry décor, table flowers, and venue styling for corporate events, parties, and special celebrations.</p>
+            <div class="meta-row"><span class="price">Custom quote</span><span class="mini">🎉 Event-ready</span></div>
+          </div>
+        </article>
 
-<!-- CREATIVE -->
-<section>
-<h2>🎨 Creative Services</h2>
+        <article class="card service-card service-item" data-name="birthday decoration discount balloon flower setup">
+          <div class="media"><img alt="Birthday decoration with flowers and balloons" src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Special Offer</span>
+            <h4>Birthday Decoration</h4>
+            <p>Room, hall, and surprise birthday décor with flower arches, balloon styling, table flowers, and discount packages for happy celebrations.</p>
+            <div class="meta-row"><span class="price">Up to 20% off</span><span class="mini">🎂 Party package</span></div>
+          </div>
+        </article>
 
-<div class="grid">
+        <article class="card service-card service-item" data-name="wedding decoration flowers bridal stage mandap">
+          <div class="media"><img alt="Wedding decoration with white and pink flowers" src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Premium Event</span>
+            <h4>Wedding Decoration</h4>
+            <p>Romantic floral styling for weddings, mandap décor, aisle design, bridal stage flowers, and personalized wedding themes.</p>
+            <div class="meta-row"><span class="price">Premium custom pricing</span><span class="mini">💍 Elegant theme</span></div>
+          </div>
+        </article>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1526045478516-99145907023c">
-<div>
-<h3>DIY Flower Kit</h3>
-<p>Create your own flower arrangements.</p>
-<button>Try</button>
-</div>
-</div>
+        <article class="card service-card service-item" data-name="DIY flower kit home craft floral craft kit">
+          <div class="media"><img alt="DIY flower kit with craft materials" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Creative Service</span>
+            <h4>DIY Flower Kit</h4>
+            <p>A fun package for flower lovers to create simple arrangements at home, ideal for gifts, learning, and creative time.</p>
+            <div class="meta-row"><span class="price">Starting from NPR 499</span><span class="mini">🎨 Make it yourself</span></div>
+          </div>
+        </article>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b">
-<div>
-<h3>Crochet Flowers</h3>
-<p>Handmade artistic flower crafts.</p>
-<button>View</button>
-</div>
-</div>
+        <article class="card service-card service-item" data-name="crochet flowers handmade bouquet sustainable flowers">
+          <div class="media"><img alt="Handmade crochet flowers bouquet" src="https://images.unsplash.com/photo-1524592714635-d77511a4834d?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Creative Service</span>
+            <h4>Crochet Flowers</h4>
+            <p>Soft handmade crochet blooms for everlasting gifts, décor, display pieces, and thoughtful keepsakes that never fade.</p>
+            <div class="meta-row"><span class="price">Starting from NPR 699</span><span class="mini">🧶 Handmade</span></div>
+          </div>
+        </article>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1458538977777-0549b2370168">
-<div>
-<h3>Message Cards 💌</h3>
-<p>Personalized emotional greeting cards.</p>
-<button>Customize</button>
-</div>
-</div>
+        <article class="card service-card service-item" data-name="custom message card note greeting card bouquet add-on">
+          <div class="media"><img alt="Custom message card with flowers" src="https://images.unsplash.com/photo-1517937274469-2c8e9f9dcb0f?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Experience Service</span>
+            <h4>Custom Message Card</h4>
+            <p>Add a warm message card with your bouquet or floral gift to make every delivery feel personal and memorable.</p>
+            <div class="meta-row"><span class="price">Free / Add-on</span><span class="mini">💌 Personal touch</span></div>
+          </div>
+        </article>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1582582429416-1b0c6a5a8a2a">
-<div>
-<h3>Packaging 🎁</h3>
-<p>Luxury flower gift wrapping.</p>
-<button>Design</button>
-</div>
-</div>
+        <article class="card service-card service-item" data-name="personalized packaging gift wrapping floral box">
+          <div class="media"><img alt="Personalized packaging with floral gift box" src="https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Experience Service</span>
+            <h4>Personalized Packaging</h4>
+            <p>Custom wrapping, premium ribbons, branded boxes, and lovely presentation for birthdays, weddings, and luxury gifting.</p>
+            <div class="meta-row"><span class="price">Starting from NPR 199</span><span class="mini">🎁 Premium finish</span></div>
+          </div>
+        </article>
 
-</div>
-</section>
+        <article class="card service-card service-item" data-name="online ordering website digital service buy flowers online">
+          <div class="media"><img alt="Online ordering on laptop and flowers" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Digital Service</span>
+            <h4>Online Ordering Website</h4>
+            <p>Customers can browse flowers, choose services, and place orders from any device through a simple online experience.</p>
+            <div class="meta-row"><span class="price">24/7 available</span><span class="mini">🌐 Easy checkout</span></div>
+          </div>
+        </article>
 
-<!-- DELIVERY -->
-<section id="delivery">
-<h2>🚚 Delivery & Orders</h2>
+        <article class="card service-card service-item" data-name="whatsapp order system chat order flower shop">
+          <div class="media"><img alt="WhatsApp order system on phone" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Digital Service</span>
+            <h4>WhatsApp Order System</h4>
+            <p>Send your flower choice, date, and delivery location directly on WhatsApp for quick and friendly ordering support.</p>
+            <div class="meta-row"><span class="price">Fast response</span><span class="mini">💬 Direct order</span></div>
+          </div>
+        </article>
 
-<div class="grid">
+        <article class="card service-card service-item" data-name="same day delivery flower courier same day services">
+          <div class="media"><img alt="Same day flower delivery service" src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Delivery Service</span>
+            <h4>Same Day Delivery</h4>
+            <p>Perfect for surprise moments and urgent gifting. We prepare and deliver flowers fast with careful handling.</p>
+            <div class="meta-row"><span class="price">Within city limits</span><span class="mini">🚚 Quick delivery</span></div>
+          </div>
+        </article>
 
-<div class="card">
-<div>
-<h3>Online Ordering</h3>
-<p>Order flowers anytime online.</p>
-</div>
-</div>
+        <article class="card service-card service-item" data-name="subscription services weekly monthly flowers bouquet plan">
+          <div class="media"><img alt="Subscription flower service with regular bouquets" src="https://images.unsplash.com/photo-1487887235947-a955ef187fcc?auto=format&fit=crop&w=1200&q=80"></div>
+          <div class="body">
+            <span class="tag">Delivery Service</span>
+            <h4>Subscription Services</h4>
+            <p>Weekly or monthly floral plans for homes, offices, shops, and regular gifting needs with fresh seasonal flowers.</p>
+            <div class="meta-row"><span class="price">Custom plan</span><span class="mini">📅 Recurring blooms</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<div>
-<h3>WhatsApp Order</h3>
-<p>Quick ordering via chat system.</p>
-<button onclick="window.open('https://wa.me/1234567890')">Chat</button>
-</div>
-</div>
+  <section class="section" id="offers">
+    <div class="container">
+      <div class="offer-banner">
+        <div class="inner">
+          <div>
+            <h4>Special celebration offers for birthdays and weddings</h4>
+            <p>
+              Enjoy discounted birthday decoration packages, custom flower combos, and bundled wedding styling.
+              Add-on message cards and personalized packaging available for a premium gift experience.
+            </p>
+            <div class="pill-row">
+              <span class="pill">Birthday Offer: 20% off</span>
+              <span class="pill">Wedding Combo: Free message card</span>
+              <span class="pill">Bundle Deal: Bouquet + Packaging</span>
+            </div>
+          </div>
+          <a class="btn btn-primary" href="#order">Book an Offer</a>
+        </div>
+      </div>
 
-<div class="card">
-<div>
-<h3>Same Day Delivery</h3>
-<p>Fast fresh flower delivery.</p>
-</div>
-</div>
+      <div class="discounts">
+        <div class="discount-box"><strong>20%</strong><span>Birthday décor discount on selected packages</span></div>
+        <div class="discount-box"><strong>Free</strong><span>Message card with premium bouquet orders</span></div>
+        <div class="discount-box"><strong>Same Day</strong><span>Fast delivery on available flower designs</span></div>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<div>
-<h3>Subscription Plan</h3>
-<p>Weekly & monthly flower delivery.</p>
-</div>
-</div>
+  <section class="section" id="why">
+    <div class="container split">
+      <div>
+        <div class="section-head" style="margin-bottom:10px">
+          <div>
+            <h3>Why choose Petals of Paradise?</h3>
+            <p>We combine flower artistry, event styling, and smooth digital ordering to make every floral moment stress-free and beautiful.</p>
+          </div>
+        </div>
+        <div class="info-list">
+          <div class="info-item"><div class="info-icon">🌷</div><div><h5>Fresh, themed, and occasion-ready designs</h5><p>Every bouquet and decoration is tailored to the purpose, from romantic tulips to bright sunflower arrangements.</p></div></div>
+          <div class="info-item"><div class="info-icon">🛍️</div><div><h5>Easy shopping with online and WhatsApp ordering</h5><p>Choose your flowers, send your details, and confirm the delivery in the most convenient way for you.</p></div></div>
+          <div class="info-item"><div class="info-icon">🎀</div><div><h5>Personalized packaging and custom cards</h5><p>Upgrade any order with premium wrapping and a custom message to make the gift unforgettable.</p></div></div>
+          <div class="info-item"><div class="info-icon">🚚</div><div><h5>Delivery and subscription flexibility</h5><p>Use same-day delivery for urgent gifting or choose a subscription plan for regular floral refreshes.</p></div></div>
+        </div>
+      </div>
+      <div class="card" style="padding:18px">
+        <img alt="Mixed bouquet with roses tulips and sunflower" src="https://images.unsplash.com/photo-1475906089153-644d9458f1d3?auto=format&fit=crop&w=1400&q=80" style="border-radius:22px; aspect-ratio: 4/5; object-fit:cover; width:100%">
+        <div style="padding:16px 6px 6px">
+          <h4 style="margin:0 0 8px">Best for gifting, décor, and event styling</h4>
+          <p class="muted" style="margin:0; line-height:1.8">Designed for customers who want beautiful flowers, creative presentation, and dependable service in one place.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
-</section>
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h3>Flower & Decoration Gallery</h3>
+          <p>Visual ideas for bouquet styles, event décor, and celebration themes. These images are matched to the services in the menu.</p>
+        </div>
+      </div>
+      <div class="gallery">
+        <figure class="g1"><img alt="Red rose bouquet" src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=1400&q=80"><figcaption class="overlay-caption">Red rose custom bouquet</figcaption></figure>
+        <figure class="g2"><img alt="Tulip bouquet" src="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1200&q=80"><figcaption class="overlay-caption">Elegant tulip bouquet</figcaption></figure>
+        <figure class="g3"><img alt="Sunflower bouquet" src="https://images.unsplash.com/photo-1508610048659-a06b669e8f33?auto=format&fit=crop&w=1200&q=80"><figcaption class="overlay-caption">Bright sunflower style</figcaption></figure>
+        <figure class="g4"><img alt="Wedding floral decoration" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80"><figcaption class="overlay-caption">Wedding floral stage décor</figcaption></figure>
+        <figure class="g5"><img alt="Birthday flower decoration" src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?auto=format&fit=crop&w=1400&q=80"><figcaption class="overlay-caption">Birthday decoration with flowers</figcaption></figure>
+        <figure class="g6"><img alt="Crochet flowers arrangement" src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=1200&q=80"><figcaption class="overlay-caption">Crochet flower craft</figcaption></figure>
+      </div>
+    </div>
+  </section>
 
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h3>Popular Packages</h3>
+          <p>Simple packages for gifts, parties, and event planning. You can edit the prices and items later to match your real business.</p>
+        </div>
+      </div>
+      <div class="pricing">
+        <div class="card price-card">
+          <span class="tag">Starter</span>
+          <h4>Gift Bouquet Plan</h4>
+          <div class="amount">NPR 599</div>
+          <ul>
+            <li>Ready-made bouquet</li>
+            <li>Message card</li>
+            <li>Simple wrapping</li>
+          </ul>
+          <a class="btn btn-secondary" href="#order">Select Plan</a>
+        </div>
+        <div class="card price-card featured">
+          <span class="tag">Most Popular</span>
+          <h4>Birthday Celebration Plan</h4>
+          <div class="amount">NPR 2,999</div>
+          <ul>
+            <li>Birthday decoration discount</li>
+            <li>Flower + balloon décor</li>
+            <li>Custom card and packaging</li>
+          </ul>
+          <a class="btn btn-primary" href="#order">Book Birthday Offer</a>
+        </div>
+        <div class="card price-card">
+          <span class="tag">Premium</span>
+          <h4>Wedding Floral Plan</h4>
+          <div class="amount">Custom</div>
+          <ul>
+            <li>Bridal stage flowers</li>
+            <li>Mandap and aisle design</li>
+            <li>Full event consultation</li>
+          </ul>
+          <a class="btn btn-secondary" href="#order">Request Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h3>Customer love</h3>
+          <p>Short testimonials to make the brand feel warm, trustworthy, and ready for celebrations.</p>
+        </div>
+      </div>
+      <div class="testimonials">
+        <div class="quote"><p>“The bouquet looked beautiful, and the birthday decoration package made the room feel magical.”</p><div class="who"><div class="avatar"></div><div><strong>Anika</strong><span>Birthday customer</span></div></div></div>
+        <div class="quote"><p>“I ordered through WhatsApp and received fast help. The personalized packaging was a lovely touch.”</p><div class="who"><div class="avatar"></div><div><strong>Rajan</strong><span>Gift buyer</span></div></div></div>
+        <div class="quote"><p>“The wedding flowers were elegant and perfectly matched the theme. Very professional service.”</p><div class="who"><div class="avatar"></div><div><strong>Sangita</strong><span>Wedding client</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="order">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h3>Order online or via WhatsApp</h3>
+          <p>Use this form to accept inquiries, booking details, and delivery requests. Connect it to your backend later, or keep it as a front-end demo.</p>
+        </div>
+      </div>
+      <div class="form-wrap">
+        <div class="form-grid">
+          <div class="form-panel">
+            <h4 style="margin-top:0">Place your order</h4>
+            <form id="orderForm">
+              <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" placeholder="Your name" required></div>
+              <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" placeholder="98XXXXXXXX" required></div>
+              <div class="field"><label for="service">Select service</label>
+                <select id="service" name="service" required>
+                  <option value="">Choose a service</option>
+                  <option>Custom Bouquet Design</option>
+                  <option>Readymade Bouquet</option>
+                  <option>Floral Arrangement for Events</option>
+                  <option>Birthday Decoration</option>
+                  <option>Wedding Decoration</option>
+                  <option>DIY Flower Kit</option>
+                  <option>Crochet Flowers</option>
+                  <option>Custom Message Card</option>
+                  <option>Personalized Packaging</option>
+                  <option>Same Day Delivery</option>
+                  <option>Subscription Services</option>
+                </select>
+              </div>
+              <div class="field"><label for="date">Delivery / Event date</label><input id="date" name="date" type="date" required></div>
+              <div class="field"><label for="details">Order details</label><textarea id="details" name="details" placeholder="Write flower type, color, budget, location, and any special message"></textarea></div>
+              <button class="btn btn-primary" type="submit">Submit Order</button>
+            </form>
+          </div>
+          <div class="form-panel soft">
+            <h4 style="margin-top:0">Quick contact and ordering options</h4>
+            <p class="muted" style="line-height:1.8">Use the buttons below in your final website to guide customers quickly to the right service.</p>
+            <div class="divider"></div>
+            <div class="info-list">
+              <div class="info-item"><div class="info-icon">📲</div><div><h5>WhatsApp order</h5><p>Send your bouquet name, occasion, and delivery address through a direct chat link.</p></div></div>
+              <div class="info-item"><div class="info-icon">🖥️</div><div><h5>Online checkout</h5><p>Let customers browse services, choose a plan, and confirm the order online.</p></div></div>
+              <div class="info-item"><div class="info-icon">⏰</div><div><h5>Same-day support</h5><p>Highlight fast preparation for city deliveries and urgent celebration orders.</p></div></div>
+            </div>
+            <div class="hero-actions" style="margin-top:20px">
+              <a class="btn btn-primary" href="https://wa.me/9779800000000" target="_blank" rel="noopener">Open WhatsApp</a>
+              <a class="btn btn-secondary" href="#contact">View Contact</a>
+            </div>
+            <div class="card" style="padding:16px; margin-top:16px; background:linear-gradient(135deg, rgba(255,122,167,.08), rgba(247,178,103,.10));">
+              <strong>Delivery note:</strong>
+              <div class="small" style="margin-top:6px">For the real site, replace the WhatsApp number, address, pricing, and images with your business details.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-head center" style="justify-content:center">
+        <div>
+          <h3>Contact Petals of Paradise</h3>
+          <p>Use these details as placeholders and update them with your exact shop location, phone number, and social links.</p>
+        </div>
+      </div>
+      <div class="contact-grid">
+        <div class="card contact-card"><div class="icon-bubble">📍</div><h4>Location</h4><p>Butwal, Nepal<br>Flower shop and event service</p></div>
+        <div class="card contact-card"><div class="icon-bubble">📞</div><h4>Phone</h4><p>+977 9800000000<br>+977 9811111111</p></div>
+        <div class="card contact-card"><div class="icon-bubble">✉️</div><h4>Email</h4><p>hello@petalsofparadise.com<br>orders@petalsofparadise.com</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h5>Petals of Paradise</h5>
+      <p>Flowers for gifting, events, decoration, creative crafts, and everyday beauty.</p>
+      <p class="small">Custom bouquet design • Readymade bouquet • Floral arrangement • DIY flower kits • Crochet flowers</p>
+    </div>
+    <div>
+      <h5>Services</h5>
+      <a href="#services">Bouquets</a><br>
+      <a href="#services">Birthday Decoration</a><br>
+      <a href="#services">Wedding Decoration</a><br>
+      <a href="#services">Event Floral Styling</a>
+    </div>
+    <div>
+      <h5>Ordering</h5>
+      <a href="#order">Online Order</a><br>
+      <a href="#order">WhatsApp Order</a><br>
+      <a href="#order">Same-Day Delivery</a><br>
+      <a href="#order">Subscription Service</a>
+    </div>
+    <div>
+      <h5>Note</h5>
+      <p>Replace the sample images and contact details with your real business information before publishing.</p>
+    </div>
+  </div>
+  <div class="container" style="margin-top:18px; padding-top:18px; border-top:1px solid rgba(217,79,138,.12); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center">
+    <div class="small">© 2026 Petals of Paradise. All rights reserved.</div>
+    <div class="small">Made with flowers, care, and celebration.</div>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/9779800000000" target="_blank" rel="noopener" aria-label="WhatsApp order">💬</a>
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const backToTop = document.getElementById('backToTop');
+  const searchInput = document.getElementById('serviceSearch');
+  const langBtn = document.getElementById('langBtn');
+  const orderForm = document.getElementById('orderForm');
+
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+
+  document.querySelectorAll('.navlinks a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 760) navLinks.classList.remove('show');
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('show', window.scrollY > 450);
+  });
+
+  backToTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  function filterServices(){
+    const q = (searchInput.value || '').toLowerCase().trim();
+    document.querySelectorAll('.service-item').forEach(item => {
+      const text = item.dataset.name.toLowerCase();
+      item.style.display = !q || text.includes(q) ? '' : 'none';
+    });
+  }
+  searchInput.addEventListener('input', filterServices);
+
+  langBtn.addEventListener('click', () => {
+    const en = langBtn.dataset.lang !== 'np';
+    langBtn.dataset.lang = en ? 'np' : 'en';
+    langBtn.textContent = en ? '🇳🇵 नेपाली मोड' : '🇳🇵 नेपाली / EN';
+    alert(en ? 'Nepali mode placeholder: connect this button to your translation system.' : 'English mode restored.');
+  });
+
+  orderForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const service = document.getElementById('service').value;
+    const date = document.getElementById('date').value;
+    const details = document.getElementById('details').value.trim();
+
+    const message = `Hello Petals of Paradise,%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService: ${encodeURIComponent(service)}%0ADate: ${encodeURIComponent(date)}%0ADetails: ${encodeURIComponent(details)}`;
+    const whatsappNumber = '9779800000000';
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank', 'noopener');
+  });
+</script>
 </body>
 </html>
